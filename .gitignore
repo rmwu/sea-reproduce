@@ -1,0 +1,11 @@
+wandb
+**.swp
+**.swo
+**.pyc
+**.pkl
+**.csv
+
+
+src/cdt
+src/gies
+src/performer

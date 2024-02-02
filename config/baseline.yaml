@@ -1,0 +1,17 @@
+---
+ # file is parsed by inner-most keys only
+ data:
+     data_file: "data/intervention_8160.csv"
+     debug: False
+     batch_size: 1  # 1 for inference, 16 for train
+     # average of this many runs of traditional alg
+     fci_batches_inference: 100
+     fci_batch_size: 1000
+     num_workers: 30
+     accumulate_batches: 1
+     log_frequency: 10
+     results_file: "results_baseline_fci.pkl"
+ model:
+     algorithm: "fci"
+     model: "baseline"
+     gpu: -1.

@@ -1,0 +1,32 @@
+---
+ # file is parsed by inner-most keys only
+ data:
+     # 1980 is subset used to tune hyperparameters
+     data_file: "data/intervention_1980.csv"
+     debug: False
+     batch_size: 16
+     fci_vars: 5
+     fci_batches: 10
+     fci_batches_inference: 10
+     fci_batch_size: 500
+     num_workers: 10
+     accumulate_batches: 1
+     log_frequency: 10
+     results_file: "results_grasp_global.pkl"
+ model:
+     algorithm: "grasp"
+     model: "resolver"
+     num_vars: 1000
+     num_edge_types: 5
+     embed_dim: 64
+     transformer_num_layers: 4
+     n_heads: 8
+     ffn_embed_dim: 512
+ train:
+     run_name: sc-rl
+     patience: 50
+     epochs: 5000
+     min_epochs: 50
+     lr: 1.e-4
+     weight_decay: 1.e-5
+     metric: "Val/auprc"
