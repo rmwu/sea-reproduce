@@ -74,9 +74,9 @@ multiplicative noise which are hard, given our limited training data.
 ## Datasets
 
 You may download our datasets [here](https://zenodo.org/records/10611036).
+Sample data split files are specified in `data`.
 - Synthetic testing datasets (Erdos-Renyi and scale-free)
 - SERGIO testing datasets
-Sample data split files are specified in `data`.
 
 Our datasets follow the [DCDI](https://github.com/slachapelle/dcdi) data format.
 - Each file has a suffix of `dataset_id`, which distinguishes between datasets

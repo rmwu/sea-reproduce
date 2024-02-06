@@ -4,8 +4,3 @@ wandb
 **.pyc
 **.pkl
 **.csv
-
-
-src/cdt
-src/gies
-src/performer
