@@ -12,6 +12,20 @@ classical algorithms are fast to compute for small problems, informative of
 (marginal) data structure, and their structure outputs as objects remain
 comparable across datasets.
 
+If you find our work interesting, please check out our paper to learn more:
+[Sample, estimate, aggregate: A recipe for causal discovery foundation
+models](http://arxiv.org/abs/2402.01929).
+
+```
+@article{wu2024sea,
+  title={Sample, estimate, aggregate: A recipe for causal discovery
+  foundation models},
+  author={Wu, Menghua and Bao, Yujia and Barzilay, Regina and Jaakkola, Tommi},
+  journal={arXiv 2402.01929},
+  year={2024}
+}
+```
+
 ## Installation
 
 ```
@@ -48,7 +62,7 @@ We recommend at least 10-20 data workers per GPU and a batch size of at least
 
 ## Models
 
-We provide pretrained weights for 3 versions of SEA:
+We provide pretrained weights for 3 versions of SEA under `checkpoints`:
 - GIES on synthetic data with (primarily) additive noise
 - FCI on synthetic data with (primarily) additive noise
 - FCI on SERGIO-simulated data
@@ -59,11 +73,10 @@ multiplicative noise which are hard, given our limited training data.
 
 ## Datasets
 
-You may download our datasets here. (TBD will upload to Zenodo)
-- Synthetic testing datasets (including Sachs)
+You may download our datasets [here](https://zenodo.org/records/10611036).
+- Synthetic testing datasets (Erdos-Renyi and scale-free)
 - SERGIO testing datasets
-- All datasets
-Data splits are specified in `data`.
+Sample data split files are specified in `data`.
 
 Our datasets follow the [DCDI](https://github.com/slachapelle/dcdi) data format.
 - Each file has a suffix of `dataset_id`, which distinguishes between datasets
@@ -71,24 +84,16 @@ Our datasets follow the [DCDI](https://github.com/slachapelle/dcdi) data format.
 - `DAG[id].npy` is a NumPy array containing the `N*N` ground truth graph.
 - `data[id].npy` is a NumPy array containing `M*N` observational data.
 - `data_interv[id].npy` is a NumPy array containing `M*N` interventional data.
-- `regimes.csv` is a length `M` text file in which every line `i` specifies
+- `regimes[id].csv` is a length `M` text file in which every line `i` specifies
   the regime index of sample `i`.
-- `interventions.csv` is a length `M` text file in which every line `i` specifies
+- `interventions[id].csv` is a length `M` text file in which every line `i` specifies
   the nodes intervened in sample `i`, delimited by `,`.
 
-## Citation
+## Results
 
-If you find our work interesting, please check out our paper to learn more:
-[Sample, estimate, aggregate: A recipe for causal discovery foundation
-models](https://github.com/rmwu/sea).
+Our outputs take the form of a pickled `dict`. Example parsing code is provided
+in `examples/SEA-results.ipynb`.
 
-```
-@article{wu2024sea,
-  title={Sample, estimate, aggregate: A recipe for causal discovery
-  foundation models},
-  author={Wu, Menghua and Bao, Yujia and Barzilay, Regina and Jaakkola, Tommi},
-  journal={arXiv preprint TBD},
-  year={2024}
-}
-```
+We have uploaded the predictions of all traditional baselines and our models
+to the [Zenodo archive](https://zenodo.org/records/10611036) as well.
 
