@@ -235,7 +235,7 @@ class AxialTransformerLayer(nn.Module):
                                    **attn_kwargs)
         col_attn = SelfAttention2D(dim=1, use_scaling=scale_cols,
                                    **attn_kwargs)
-        ffn = FeedForwardNetwork(embed_dim, n_heads,
+        ffn = FeedForwardNetwork(embed_dim, ffn_embed_dim,
                                  activation_dropout=dropout)
         # Add residual wrapper
         self.row_attn = self.build_residual(row_attn)
