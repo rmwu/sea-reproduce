@@ -21,7 +21,7 @@
      embed_dim: 64
      transformer_num_layers: 4
      n_heads: 8
-     ffn_embed_dim: 512
+     ffn_embed_dim: 8
  train:
      run_name: sc-rl
      patience: 50
