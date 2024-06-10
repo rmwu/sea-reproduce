@@ -32,7 +32,7 @@ models](http://arxiv.org/abs/2402.01929).
 conda create -y --name sea pip python=3.10
 conda activate sea
 
-pip install tqdm pyyaml numpy=1.23 pandas matplotlib seaborn
+pip install tqdm pyyaml numpy==1.23 pandas matplotlib seaborn
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install pytorch-lightning==1.9.0 torchmetrics==1.3.0 causal-learn==0.1.3.7 pulp==2.8.0 wandb
 ```
